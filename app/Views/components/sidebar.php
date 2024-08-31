@@ -3,7 +3,7 @@
 	<ul class="sidebar-nav" id="sidebar-nav">
 
 	<li class="nav-item">
-		<a class="nav-link <?php echo (uri_string() == '') ? "" : "collapsed" ?>" href="<?php echo base_url() ?>">
+		<a class="nav-link <?php echo (uri_string() == '') ? "" : "collapsed" ?>" href=".">
 		<i class="bi bi-grid"></i>
 		<span>Home</span>
 		</a>
@@ -15,7 +15,6 @@
 		<span>Keranjang</span>
 		</a>
 	</li>
-
 	<?php
 	if (session()->get('role') == 'admin') {
 	?>
@@ -28,33 +27,6 @@
 	<?php
 	}
 	?>
-
-	<li class="nav-item">
-		<a class="nav-link <?php echo (uri_string() == 'historibelanja') ? "" : "collapsed" ?>" href="<?php echo base_url() ?>historibelanja">
-			<i class="bi bi-clock-history"></i>
-			<span>Histori Belanja</span>
-		</a>
-	</li>
-
-	<?php
-		if($_SESSION['role'] == "admin"){
-	?>
-	<li class="nav-item">
-		<a class="nav-link <?php echo (uri_string() == 'historibelanja') ? "" : "collapsed" ?>" href="<?php echo base_url() ?>transaksi">
-			<i class="bi bi-journals"></i>
-			<span>Transaksi</span>
-		</a>
-	</li>
-	<li class="nav-item">
-		<a class="nav-link <?php echo (uri_string() == 'manajemenuser') ? "" : "collapsed" ?>" href="<?php echo base_url() ?>manajemenuser">
-			<i class="bi bi-justify"></i>
-			<span>Manajemen User</span>
-		</a>
-	</li>
-	<?php
-		}	
-	?>
-
 	</ul>
 
 </aside><!-- End Sidebar-->

@@ -32,10 +32,6 @@ $routes->set404Override();
 $routes->get('/', 'Home::index', ['filter' => 'auth']);
 $routes->get('/login', 'AuthController::login');
 $routes->add('/login', 'AuthController::login');
-$routes->get('/register_view', 'AuthController::register_view');
-$routes->add('/register_view', 'AuthController::register_view');
-$routes->get('/register', 'AuthController::register');
-$routes->add('/register', 'AuthController::register');
 $routes->get('/logout', 'AuthController::logout');
 $routes->get('/checkout', 'TransaksiController::checkout', ['filter' => 'auth']);
 $routes->get('/keranjang', 'TransaksiController::cart_show', ['filter' => 'auth']);
@@ -46,30 +42,10 @@ $routes->get('/keranjang/clear', 'TransaksiController::cart_clear', ['filter' =>
 $routes->get('/keranjang/getcity', 'TransaksiController::getcity', ['filter' => 'auth']);
 $routes->get('/keranjang/getcost', 'TransaksiController::getcost', ['filter' => 'auth']);
 $routes->add('/keranjang/buy', 'TransaksiController::buy', ['filter' => 'auth']);
-
 $routes->get('/produk', 'ProdukController::index', ['filter' => 'auth']);
 $routes->add('/produk', 'ProdukController::create', ['filter' => 'auth']);
 $routes->add('/produk/edit/(:any)', 'ProdukController::edit/$1', ['filter' => 'auth']);
 $routes->get('/produk/delete/(:any)', 'ProdukController::delete/$1', ['filter' => 'auth']);
-
-$routes->get('/historibelanja', 'HistoriController::index', ['filter' => 'auth']);
-$routes->get('/historibelanja/delete/(:any)', 'HistoriController::delete/$1', ['filter' => 'auth']);
-$routes->get('/historibelanja/update/(:any)', 'HistoriController::update/$1', ['filter' => 'auth']);
-
-$routes->add('/profile/edit/(:any)', 'ProfileController::edit/$1', ['filter' => 'auth']);
-$routes->get('/profile/edit_view/(:any)', 'ProfileController::edit_view/$1', ['filter' => 'auth']);
-$routes->get('/profile/(:any)', 'ProfileController::view/$1', ['filter' => 'auth']);
-
-$routes->add('/manajemenuser', 'ProfileController::displayManajemenUser', ['filter' => 'auth']);
-$routes->add('/manajemenuser/edit/(:any)', 'ProfileController::editPage/$1', ['filter' => 'auth']);
-$routes->add('/manajemenuser/editUser/(:any)', 'ProfileController::editUser/$1', ['filter' => 'auth']);
-$routes->add('/manajemenuser/deleteUser/(:any)', 'ProfileController::deleteUser/$1', ['filter' => 'auth']);
-$routes->add('/manajemenuser/tambah', 'ProfileController::tambahPage', ['filter' => 'auth']);
-$routes->add('/manajemenuser/tambahUser', 'ProfileController::tambahUser/$1', ['filter' => 'auth']);
-
-$routes->get('/transaksi', 'MenuTransaksiController::index', ['filter' => 'auth']);
-$routes->get('/transaksi/delete/(:any)', 'MenuTransaksiController::delete/$1', ['filter' => 'auth']);
-$routes->get('/transaksi/update/(:any)', 'MenuTransaksiController::update/$1', ['filter' => 'auth']);
 
 /*
  * --------------------------------------------------------------------

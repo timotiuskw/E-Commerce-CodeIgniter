@@ -20,14 +20,10 @@ if (session()->getFlashData('success')) {
 			echo form_hidden('hrg', $produk['hrg']);
 			echo form_hidden('foto', $produk['foto']);
 			?>
-			<div class="card d-flex justify-content-center align-items-center text-center p-2">
-				<div class="card-body">
+			<div class="card">
+				<div class="card-body" style="text-align: center; padding-top: 10px;">
 					<img src="<?php echo base_url() . "public/img/" . $produk['foto'] ?>" alt="..." width="300px">
-					<h5 class="card-title">
-						<?php echo $produk['nama'] ?><br>
-						<?php echo number_to_currency($produk['hrg'], 'IDR') ?><br>
-						Stok : <?php echo $produk['jml'] ?>
-					</h5>
+					<h5 class="card-title"><?php echo $produk['nama'] ?><br><?php echo number_to_currency($produk['hrg'], 'IDR') ?></h5>
 					<button type="submit" class="btn btn-info rounded-pill">Beli</button>
 				</div>
 			</div>

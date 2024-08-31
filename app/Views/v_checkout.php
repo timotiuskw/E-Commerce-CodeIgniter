@@ -40,8 +40,8 @@
                 <label for="ongkir" class="form-label">Ongkir</label>
                 <input type="text" class="form-control" id="ongkir" name="ongkir" readonly>
             </div>
-        </div>
-        <div class="col-lg-6">
+    </div>
+    <div class="col-lg-6">
         <!-- Vertical Form -->
             <div class="col-12">
                 <!-- Default Table -->

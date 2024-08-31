@@ -92,4 +92,3 @@
 				return redirect('produk')->with('success','Data Berhasil Dihapus');
 			}
 		}
-

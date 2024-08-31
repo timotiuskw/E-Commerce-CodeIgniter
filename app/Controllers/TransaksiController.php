@@ -184,6 +184,7 @@ class TransaksiController extends BaseController
                     'id_transaksi' => $last_insert_id,
                     'id_barang' => $value['id'], 
                     'jumlah' => $value['qty'],
+                    'diskon' => 0,
                     'subtotal_harga' => $value['qty']*$value['price'],
                     'created_by' => $this->request->getPost('username'),
                     'created_date' => date("Y-m-d H:i:s")
