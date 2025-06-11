@@ -1,54 +1,80 @@
-# CodeIgniter 4 Framework
+# 🛒 E-Commerce CodeIgniter 4
 
-## What is CodeIgniter?
+Aplikasi E-Commerce sederhana berbasis **CodeIgniter 4** yang menyediakan dua role pengguna: **Admin** dan **Pembeli**. Admin dapat menambahkan produk, sedangkan pembeli dapat melakukan transaksi pembelian barang, menyelesaikan belanja, dan mengisi alamat serta ongkir menggunakan integrasi **RajaOngkir API**.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+---
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## 📦 Fitur Utama
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+* Login berbasis role (Admin dan Pembeli)
+* Manajemen produk (oleh Admin)
+* Pembelian produk (oleh Pembeli)
+* Keranjang belanja
+* Checkout dengan pengisian alamat
+* Perhitungan ongkir menggunakan **RajaOngkir API**
 
-The user guide corresponding to the latest version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+---
 
-## Important Change with index.php
+## 🛠️ Cara Instalasi
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+1. **Clone / Download Repository**
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+   ```bash
+   git clone https://github.com/timotiuskw/e-commerce-codeigniter.git
+   ```
 
-**Please** read the user guide for a better explanation of how CI4 works!
+   > Atau ekstrak file ZIP ke dalam folder `htdocs` XAMPP Anda
 
-## Repository Management
+2. **Buat Database**
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+   * Buka `phpMyAdmin`
+   * Buat database baru dengan nama:
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+     ```
+     ci4-e-commerce
+     ```
 
-## Contributing
+3. **Import Struktur Database**
 
-We welcome contributions from the community.
+   * Import file `db.sql` yang tersedia dalam folder proyek
+   * File ini berisi tabel dan dummy data berikut:
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+     * Akun admin dan pembeli
 
-## Server Requirements
+4. **Jalankan Aplikasi**
 
-PHP version 7.4 or higher is required, with the following extensions installed:
+   * Buka browser dan akses:
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+     ```
+     http://localhost/e-commerce-codeigniter
+     ```
+   * Anda akan diarahkan secara otomatis ke halaman login.
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+---
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+## 🔐 Akun Default
+
+| Role    | Username | Password |
+| ------- | -------- | -------- |
+| Admin   | admin    | admin    |
+| Pembeli | pembeli  | pembeli  |
+
+---
+
+## ▶️ Alur Penggunaan Aplikasi
+
+1. **Login sebagai Admin**
+
+   * Tambahkan produk dari menu Admin
+
+2. **Logout dan Login sebagai Pembeli**
+
+   * Klik tombol **"Beli"** pada produk yang ingin dibeli
+   * Pergi ke menu **Keranjang**
+   * Klik tombol **"Selesai Belanja"**
+
+3. **Checkout**
+
+   * Anda akan diarahkan ke halaman untuk mengisi **alamat pengiriman**
+   * Pilih **kota tujuan** dan **kurir**
+   * Ongkir dihitung secara **otomatis menggunakan API RajaOngkir**
